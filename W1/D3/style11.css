@@ -1,0 +1,24 @@
+*{
+    
+    box-sizing: border-box;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(140, 207, 31);
+}
+.box2{
+    margin: 50px;  /* All four sides same size*/
+    /* margin: 10px 30px;  Top  10px,  right 30px */
+    /* margin: 10px 20px 30px 40px;   Top 10px, right 20px, bottom 30px, left 40px */
+
+}
+body{
+    background-color: rgb(178, 203, 235);
+}
+.border{
+    border: 2px solid black;
+    border-bottom: 5px dashed rgb(241, 124, 15);
+    border-right: 3px dotted rgba(241, 124, 15, 0.952);
+    border-radius: 10px ;
+}
