@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child and Descendent Selector</title>
+    <style>
+        /* child Selector */
+        div > p {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        /* Descendent Selector */
+        div span {
+            color: rgb(206, 178, 19);
+            text-decoration: underline;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Direct Child </p>
+        <section>
+            <p>This is a not a direct child.</p>
+        </section>
+        <!-- Descendent Selector -->
+        <span>
+            This span is inside a div tag, but it is not a direct child of the div tag. It is a descendant of the div tag.
+        </span>
+        <div>
+            <span>Nested span tag</span>
+        </div>
+    </div>
+</body>
+</html>
