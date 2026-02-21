@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Grid Layout</title>
+    <style>
+        
+        .item {
+            background-color: lightblue;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+
+        .outer {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            /* Outer grid with 2:1 ratio columns */
+            gap: 10px;
+            background-color: lightgray;
+            padding: 10px;
+        }
+
+        .inner {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Inner grid with 2 equal columns */
+            gap: 5px;
+            background-color: lightcoral;
+            padding: 10px;
+        }
+        .inner inner-item {
+            background-color: rgb(236, 236, 24);
+            border: 2px solid #000;
+            color: black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nested Grid Layouts -->
+    <div class="outer">
+        <div class="item">1</div>
+        <div class="inner">
+            <div class="item inner-item">Nested A</div>
+            <div class="item inner-item">Nested B</div>
+            <div class="item inner-item">Nested C</div>
+            <div class="item inner-item">Nested D</div>
+        </div>
+    </div>
+</body>
+
+</html>
