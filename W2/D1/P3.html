@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Elements : Absolute</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(152, 213, 248);   
+        }
+        .wrapper {
+            position: relative;
+            height: 300px;
+            background-color: rgb(200, 250, 136);
+
+        }
+        .box {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            border: 2px solid black;
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border-radius: 10px;
+            box-shadow: 10px 10px  rgba(247, 2, 2, 0.5);
+            padding: 20px;
+            margin-top: 30px;
+            
+            color: rgb(24, 170, 255);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Absolute  Position</h2>
+    <div class="wrapper">
+        <p style="height:1000px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod sunt vero impedit sapiente atque fugit egit aque odit tempora, magni itaque alias architecto dolorum consequatur vel voluptate culpa non laborum accusantium?
+        Aliquam, dolorem ducimus eligendi quos exercitationem, dolorum sit deleniti cum, laboriosam et consectetur ut quod atque culpa fugiat velit distinctio ipsam nostrum quo ullam delectus omnis corporis repellendus. Pariatur, dignissimos.</p>
+
+        <div class="box"> Absolute box</div>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis, delectus. Est nobis quibusdam maiores fugiat, qui vel. Vel repellat impedit consequatur debitis. Enim omnis deserunt praesentium velit qui ut dignissimos?
+        Modi sequi architecto voluptates corporis optio veniam a quas rem illum cumque voluptatum et, libero temporibus reiciendis reprehenderit facilis sit, iusto voluptas tempora placeat natus commodi omnis ut non. Aspernatur?</p>
+    </div>
+</body>
+</html>
