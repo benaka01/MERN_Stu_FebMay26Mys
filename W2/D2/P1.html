@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Basics</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<!-- 50,100,---900 max -->
+<body class="bg-blue-50">
+    <p class=" text-red-600 text-4xl font-bold underline">Hello Tailwind CSS</p>
+    <h2 class="text-red-500 bg-blue-500 text-4xl p-6 m-4"> Utility Class 1</h2> 
+    <h3 class="text-blue-500 bg-red-600 text-4xl pl-16 pr-10 pt-20 pb-30 ml-4 mr-6 mt-8 mb-10"> Utility Class 2</h3> 
+    <h4 class="text-blue-500 bg-blue-700 text-4xl px-6 py-10 mx-4 my-10"> Utility Class 3</h4>  
+    <div class="border-5 border-green-900 bg-red-400 rounded-full w-100 h-100 mb-10 ml-10"></div>
+    <div class="border-5 border-green-900 bg-red-400 rounded-sm w-100 h-10 mb-10 ml-10"></div>
+    <div class="border-5 border-green-900 bg-red-400 rounded-sm w-10 h-100 mb-10 ml-10"></div>
+    <div class="border-5 border-green-900 bg-red-400 rounded-r-full w-100 h-100 mb-10 ml-10"></div>
+    <div class="border-5 border-green-900 bg-red-400 rounded-l-full w-100 h-100 mb-10 ml-10"></div>
+    <p class="text-lg">This is a large text</p><!-- sm/base/lg/xl/2xl/3xl-->
+    <p class="text-light"></p><!-- light/normal/bold-->
+    <p class="text-center">This text is centered</p><!-- left/right/center-->
+    <button class="bg-blue-500 hover:bg-blue-700 hover:text-white font-bold py-2 px-4 rounded m-10 ">Click Me</button>
+    <!-- Success:green, error :red ; warning/alert:yellow ifno:blue -->
+    <div class="bg-yellow-200 p-4">This is a alert message</div>
+    <div class="bg-green-800 p-4">
+        <p class="font-bold">This is a success message</p>
+    </div>
+    <span class="inline-flex items-center ml-170 p-10 justify-center w-10 h-10 bg-blue-500 text-white rounded-full m-3">New</span>
+    <div class="border p-6 rounded m-8">
+        <h3 class="font-bold text-xl ">card title</h3>
+        <p>This is a simple description inside the card</p>
+    </div>
+</body>
+</html>
