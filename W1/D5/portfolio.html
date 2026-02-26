@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+ 
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#e0e7ff,#f8fafc);
+    color:var(--secondary);
+    line-height:1.6;
+}
+
+/* ================= NAVBAR ================= */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(14px);
+    background:rgba(15,23,42,0.75);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:white;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:2rem;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    left:0;
+    bottom:-6px;
+    background:var(--accent);
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* ================= HERO ================= */
+.hero{
+    padding:6rem 1rem;
+    text-align:center;
+    background:linear-gradient(135deg,#6366f1,#22d3ee);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.hero p{
+    margin-top:1rem;
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+.profile-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    margin:2rem 0;
+    border:6px solid rgba(255,255,255,0.4);
+    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    transition:0.4s;
+}
+
+.profile-img:hover{
+    transform:scale(1.08) rotate(2deg);
+}
+
+.cta-button{
+    display:inline-block;
+    margin-top:1.5rem;
+    padding:0.9rem 2.5rem;
+    background:white;
+    color:#111;
+    border-radius:50px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+    align-self: center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover{
+    transform:translateY(-4px);
+}
+
+/* ================= SECTION STRUCTURE ================= */
+section{
+    max-width:1150px;
+    margin:5rem auto;
+    padding:0 2rem;
+}
+
+section h2{
+    font-size:2.4rem;
+    margin-bottom:3rem;
+    text-align:center;
+    position:relative;
+}
+
+section h2::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:linear-gradient(to right,#6366f1,#22d3ee);
+    display:block;
+    margin:15px auto 0;
+    border-radius:4px;
+}
+
+/* ================= GLASS CARDS ================= */
+.about,
+.skill-card,
+.project-content{
+    background:var(--glass);
+    backdrop-filter:blur(20px);
+    border:1px solid var(--border);
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    transition:0.4s ease;
+}
+
+.about:hover,
+.skill-card:hover,
+.project-content:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* ================= GRID SYSTEM ================= */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.projects-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:2rem;
+}
+
+/* ================= TAGS ================= */
+.tag{
+    display:inline-block;
+    background:linear-gradient(to right,#6366f1,#22d3ee);
+    color:white;
+    padding:6px 16px;
+    border-radius:30px;
+    font-size:0.8rem;
+    margin:6px 4px;
+}
+
+/* ================= TABLE ================= */
+table{
+    width:100%;
+    margin-top:3rem;
+    border-collapse:collapse;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+table th{
+    background:linear-gradient(to right,#6366f1,#22d3ee);
+    color:white;
+    padding:16px;
+}
+
+table td{
+    padding:14px;
+    background:white;
+    border-bottom:1px solid #eee;
+}
+
+table tr:hover td{
+    background:#f1f5f9;
+}
+
+/* ================= CONTACT FORM ================= */
+.contact-form{
+    background:white;
+    padding:3rem;
+    border-radius:20px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.1);
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:0.9rem;
+    border-radius:12px;
+    border:1px solid #ccc;
+    margin-bottom:1.2rem;
+    transition:0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#6366f1;
+    box-shadow:0 0 0 4px rgba(99,102,241,0.15);
+    outline:none;
+}
+
+.submit-btn{
+    background:linear-gradient(to right,#6366f1,#22d3ee);
+    color:white;
+    padding:1rem 2.5rem;
+    border:none;
+    border-radius:50px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    margin-left:45%;
+}
+
+.submit-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(99,102,241,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    section{
+        padding:0 1rem;
+    }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo">BENAKA B</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- FlexBox Layout -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Benaka B</h1>
+        <img src="PHOTO.jpg" alt="My Photo" class="profile-img">
+        <p>Software Developer & Designer <br>MERN Stack|DevOps <br> Front-end Developer</p>
+        <a href="#contact" class="cta-button">Contact Me</a>
+    </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <article class="about">
+            <h3>Full Stack Developer</h3>
+            <p>Experinencing in web development and hosting spealized in finance-domain projects.</p>
+            <div class="tags">
+                <span class="tag">Backend</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">DB:optimization</span>
+            </div>
+        </article>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>MERN-Stack</h4>
+                <p>React JS, Express, MongoDB, Node.js</p>
+            </div>
+            <div class="skill-card">
+                <h4>MERN-Stack</h4>
+                <p>React JS, Express, MongoDB, Node.js</p>
+            </div>
+            <div class="skill-card">
+                <h4>MERN-Stack</h4>
+                <p>React JS, Express, MongoDB, Node.js</p>
+            </div>
+        </div>
+
+    </section>
+    <!-- Project Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-content">
+                <h4>gola</h4>
+                <p>Rapid way to book a cab hassel free.</p>
+                <a href="https://gola.com" target="_blank">View</a>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th colspan="2">Technology</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aws for hosting</td>
+                    <td>React JS</td>
+                    <td>Node JS</td>
+                </tr>
+                <tr>
+                    <td>Aws for hosting</td>
+                    <td>React JS</td>
+                    <td>Node JS</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select name="type">
+                        <option value="project">FT</option>
+                        <option value="consultant">Consultant</option>
+                    </select>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </section>
+</body>
+
+</html>
