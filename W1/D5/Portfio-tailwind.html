@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-100 text-gray-800">
+
+<!-- NAVBAR -->
+<header class="bg-gray-900 text-white sticky top-0">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+        <h1 class="text-xl font-bold">BENAKA B</h1>
+        <ul class="hidden md:flex space-x-6">
+            <li><a href="#home" class="hover:text-gray-300">Home</a></li>
+            <li><a href="#about" class="hover:text-gray-300">About</a></li>
+            <li><a href="#skills" class="hover:text-gray-300">Skills</a></li>
+            <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+            <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="text-center py-16 bg-white">
+    <h2 class="text-4xl font-bold mb-4">Benaka B</h2>
+
+    <img src="PHOTO.jpg"
+         class="w-40 h-40 mx-auto rounded-full border mb-4"
+         alt="Profile">
+
+    <p class="mb-4">
+        Software Developer & Designer <br>
+        MERN Stack | DevOps <br>
+        Front-end Developer
+    </p>
+
+    <a href="#contact"
+       class="inline-block bg-black text-white px-6 py-2 rounded">
+        Contact Me
+    </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-4xl mx-auto p-6 mt-10 bg-white rounded shadow">
+    <h2 class="text-2xl font-bold mb-4 text-center">About Me</h2>
+
+    <h3 class="text-lg font-semibold mb-2">Full Stack Developer</h3>
+    <p class="mb-4">
+        Experienced in web development and hosting specialized in finance-domain projects.
+    </p>
+
+    <div class="space-x-2">
+        <span class="bg-gray-200 px-3 py-1 rounded text-sm">Backend</span>
+        <span class="bg-gray-200 px-3 py-1 rounded text-sm">Node.js</span>
+        <span class="bg-gray-200 px-3 py-1 rounded text-sm">DB Optimization</span>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="max-w-6xl mx-auto p-6 mt-10">
+    <h2 class="text-2xl font-bold mb-6 text-center">Skills</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold mb-2">MERN Stack</h4>
+            <p>React JS, Express, MongoDB, Node.js</p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold mb-2">DevOps</h4>
+            <p>AWS, Docker, CI/CD</p>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-semibold mb-2">Frontend</h4>
+            <p>HTML, CSS, Tailwind, JavaScript</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="max-w-6xl mx-auto p-6 mt-10">
+    <h2 class="text-2xl font-bold mb-6 text-center">My Projects</h2>
+
+    <div class="bg-white p-4 rounded shadow mb-6">
+        <h4 class="font-semibold mb-2">Gola</h4>
+        <p class="mb-2">Rapid way to book a cab hassle free.</p>
+        <a href="https://gola.com" class="text-blue-600 underline">View</a>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="w-full border">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="p-2 border">Project</th>
+                    <th class="p-2 border">Technology 1</th>
+                    <th class="p-2 border">Technology 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="p-2 border">AWS Hosting</td>
+                    <td class="p-2 border">React JS</td>
+                    <td class="p-2 border">Node JS</td>
+                </tr>
+                <tr>
+                    <td class="p-2 border">AWS Hosting</td>
+                    <td class="p-2 border">React JS</td>
+                    <td class="p-2 border">Node JS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="max-w-3xl mx-auto p-6 mt-10 mb-16">
+    <h2 class="text-2xl font-bold mb-6 text-center">Contact Me</h2>
+
+    <form class="bg-white p-6 rounded shadow space-y-4">
+        <div>
+            <label class="block mb-1">Name</label>
+            <input type="text"
+                   class="w-full border p-2 rounded"
+                   placeholder="Your Name" required>
+        </div>
+
+        <div>
+            <label class="block mb-1">Email</label>
+            <input type="email"
+                   class="w-full border p-2 rounded"
+                   placeholder="Your Email" required>
+        </div>
+
+        <div>
+            <select class="w-full border p-2 rounded">
+                <option>Full Time</option>
+                <option>Consultant</option>
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button type="submit"
+                    class="bg-black text-white px-6 py-2 rounded">
+                Send
+            </button>
+        </div>
+    </form>
+</section>
+
+</body>
+</html>
