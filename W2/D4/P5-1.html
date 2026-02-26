@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+<main class="max-w-4xl mx-auto p-6 space-y-8">
+
+    <section class="border rounded p-6 space-y-8">
+
+        <!-- Carousel -->
+        <div class="overflow-hidden rounded border">
+            <div id="track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
+
+                <div class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-red-100 font-bold text-2xl">
+                    Slide 1
+                </div>
+
+                <div class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-green-200 font-bold text-2xl">
+                    Slide 2
+                </div>
+
+                <div class="w-full shrink-0 h-52 snap-start flex items-center justify-center bg-blue-500 text-white font-bold text-2xl">
+                    Slide 3
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex justify-center items-center gap-3">
+            <button id="prev"
+                class="px-3 py-2 rounded border hover:bg-gradient-to-r hover:from-pink-400 hover:to-blue-400 transition">
+                Prev
+            </button>
+
+            <button id="next"
+                class="px-3 py-2 rounded border hover:bg-gradient-to-r hover:from-pink-400 hover:to-blue-400 transition">
+                Next
+            </button>
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const track = document.getElementById("track");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+
+    if (!track || !prev || !next) return;
+
+    const slides = track.children;
+    const total = slides.length;
+
+    let index = 0;
+
+    function update() {
+        track.scrollTo({
+            left: slides[index].offsetLeft,
+            behavior: "smooth"
+        });
+    }
+
+    prev.addEventListener("click", () => {
+        index = (index - 1 + total) % total;
+        update();
+    });
+
+    next.addEventListener("click", () => {
+        index = (index + 1) % total;
+        update();
+    });
+
+});
+</script>
+
+</body>
+</html>
