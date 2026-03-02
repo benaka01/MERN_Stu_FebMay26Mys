@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dynammic concat , type conversion , Data Types</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <pre id="out">
+
+    </pre>    
+    <button id="runbtn" class="px-3 py-1 rounded-lg m-2 border bg-gray-700 text-white">Run</button>
+ 
+    <script>
+        const out = document.getElementById("out");
+        function print(...args){
+
+            console.log(...args);
+            out.textContent+=args.join("")+"\n";
+        }
+        function clearOut(){
+            out.textContent="";
+        }
+        function run(){
+            clearOut();
+            // Dynammic concat and type conversion
+           let value = "10";
+           print("Value is : ",value , " Type of Value is ",typeof value );
+
+           value = 10;
+           print("Value is : ",value , " Type of Value is ",typeof value );
+           
+           print("'10'+5 is ", "10"+5);
+            print("'10'-5 is ", "10"-5);//numeric cnversion
+            print("'10'==10","10"==10);//checkk values only
+            print("'10'===10","10"===10);//check datatype with value
+
+
+            //DataTypes
+            const underfval = undefined;
+            const nullval = null;
+            print("underfval = ",typeof underfval);
+            print("nullval = ",typeof nullval);
+        }     
+        document.getElementById("runbtn").addEventListener("click",run);
+    </script>
+</body>
+</html>
