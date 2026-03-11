@@ -3,7 +3,7 @@ const jsonoutput =document.getElementById("jsonoutput");
 document.getElementById("savebtn").addEventListener("click",function(){
     const user={
         name:"Ben",
-        id:"101",
+        id:101,
         role:"developer",
         skills:["html","css","js","react"],
     };
@@ -13,7 +13,13 @@ document.getElementById("savebtn").addEventListener("click",function(){
 });
 
 document.getElementById("readbtn").addEventListener("click",function(){
+    try{
     const up =localStorage.getItem("userProfile");
     const view=(JSON.parse(up));
-    jsonoutput.textContent="user object read"+view;
+    console.log(up);
+    jsonoutput.textContent="user object read "+up;
+    }
+    catch(error){
+        jsonoutput.textContent="JSON Parsing Failed";
+    }
 });
