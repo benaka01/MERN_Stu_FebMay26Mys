@@ -12,7 +12,7 @@ function fetchAccountData() {
         setTimeout(function(){
             const accountFound=true;
             if(accountFound) {
-                resolve("Account data loaded");
+                resolve("Account data loaded.");
             }
             else{
                 reject("Account Data could not found.");
