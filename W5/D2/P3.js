@@ -1,0 +1,13 @@
+//Asynchronous approach of Node.js
+
+console.log("Step:1 Script Started");
+
+setTimeout(()=>{
+    console.log("Step 3: Delayed callback finished.F1");
+},10000);        //1000ms is equal to 1 sec
+
+setTimeout(function(){
+    console.log("Step 4: Delayed callback finished.F2")
+},3000);
+
+console.log("Step 2:script did not stop while waiting");
